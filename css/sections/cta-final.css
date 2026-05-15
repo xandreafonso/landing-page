@@ -1,0 +1,79 @@
+.cta-final-section {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 48px 96px;
+}
+
+.cta-final {
+  position: relative;
+  background: var(--atlas-gradient);
+  border-radius: var(--radius-lg);
+  padding: 112px 80px;
+  text-align: center;
+  overflow: hidden;
+  color: var(--atlas-on-gradient);
+}
+
+.cta-final::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18), transparent 50%);
+  pointer-events: none;
+}
+
+.cta-final h2 {
+  position: relative;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  max-width: 900px;
+  margin-inline: auto;
+  color: var(--atlas-on-gradient);
+}
+
+.cta-final p {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 24px auto 0;
+  color: rgba(var(--atlas-on-gradient-rgb), 0.8);
+}
+
+.cta-final-btn {
+  position: relative;
+  margin-top: 40px;
+  background: #0A0A0A;
+  color: var(--atlas-on-gradient);
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .cta-final {
+    padding: 80px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-final-section {
+    padding: 0 32px 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-final {
+    padding: 64px 24px;
+    border-radius: var(--radius-md);
+  }
+  .cta-final h2 {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+  .cta-final p {
+    font-size: 16px;
+  }
+}

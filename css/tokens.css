@@ -1,0 +1,36 @@
+:root {
+  --atlas-c-start: #1E4D8C;
+  --atlas-c-mid: #2B6CB0;
+  --atlas-c-end: #4A90D9;
+  --atlas-glow-cool-rgb: 30, 77, 140;
+  --atlas-glow-warm-rgb: 74, 144, 217;
+  --atlas-on-gradient: #FFFFFF;
+  --atlas-on-gradient-rgb: 255, 255, 255;
+
+  --atlas-gradient: linear-gradient(135deg, #1E4D8C 0%, #4A90D9 100%);
+  --atlas-gradient-90: linear-gradient(90deg, #1E4D8C 0%, #4A90D9 100%);
+  --atlas-gradient-loop: linear-gradient(135deg, #133A6E 0%, #2B6CB0 50%, #133A6E 100%);
+
+  --surface-950: #0A0A0A;
+  --surface-900: #1A1A1A;
+  --surface-700: #3A3A3A;
+  --surface-600: #555555;
+  --surface-500: #888888;
+  --surface-400: #AAAAAA;
+  --surface-200: #CCCCCC;
+
+  --container-narrow: 1280px;
+  --container-medium: 1360px;
+  --container-wide: 1720px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+  --transition-slower: 700ms;
+}

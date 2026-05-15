@@ -1,0 +1,106 @@
+.profiles-section {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+.profiles-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.profiles-header .section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+}
+
+.profiles-header h2 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-wrap: balance;
+  margin-bottom: 16px;
+}
+
+.profiles-header p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.profile-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--surface-950);
+  padding: 40px 24px;
+  text-align: center;
+  transition: all var(--transition-base) ease;
+}
+
+.profile-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--surface-900);
+}
+
+.profile-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+}
+
+.profile-card h3 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.profile-card p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .profiles-section {
+    padding: 56px 32px;
+  }
+  .profiles-header h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .profiles-section {
+    padding: 40px 12px;
+  }
+  .profiles-header h2 {
+    font-size: 26px;
+  }
+  .profiles-grid {
+    grid-template-columns: 1fr;
+  }
+}

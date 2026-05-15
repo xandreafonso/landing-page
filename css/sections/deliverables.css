@@ -1,0 +1,110 @@
+.deliverables-section {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 96px 48px;
+}
+
+.deliverables-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.deliverables-header .section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+}
+
+.deliverables-header h2 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-wrap: balance;
+  margin-bottom: 16px;
+}
+
+.deliverables-header p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.deliverable-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--surface-950);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all var(--transition-base) ease;
+}
+
+.deliverable-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--surface-900);
+}
+
+.deliverable-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 24px;
+  background-image: var(--atlas-gradient);
+}
+
+.deliverable-card h3 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.deliverable-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .deliverables-section {
+    padding: 64px 32px;
+  }
+  .deliverables-header h2 {
+    font-size: 32px;
+  }
+  .deliverables-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .deliverables-section {
+    padding: 48px 12px;
+  }
+  .deliverables-header h2 {
+    font-size: 26px;
+  }
+  .deliverables-grid {
+    grid-template-columns: 1fr;
+  }
+}

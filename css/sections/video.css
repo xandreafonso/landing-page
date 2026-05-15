@@ -1,0 +1,32 @@
+.video-section {
+  max-width: var(--container-medium);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 48px 48px;
+}
+
+.video-wrapper {
+  border-radius: var(--radius-md);
+  padding: 20px;
+  background-color: #000000;
+}
+
+.video-wrapper video,
+.video-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 0 32px 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-section {
+    padding: 0 12px 32px;
+  }
+}

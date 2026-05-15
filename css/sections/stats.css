@@ -1,0 +1,26 @@
+.stats-section {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 48px 96px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .stats-section {
+    padding: 0 32px 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-section {
+    padding: 0 12px 64px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
