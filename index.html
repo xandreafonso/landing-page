@@ -1,576 +1,455 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alexandre — Consultoria em IA, automação e agentes</title>
-  <meta name="description" content="Consultoria em IA para prestadores de serviço e pequenas empresas. Mapeio seu processo, identifico onde a IA resolve de verdade e implemento — sem enrolação.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexandre — ConsultorIA · IA aplicada para prestadores de serviço e PMEs</title>
+  <meta name="description" content="Consultoria solo em IA para prestadores de serviço e pequenas empresas. Mapeio seu processo, identifico onde a IA resolve de verdade e implemento — do diagnóstico ao agente rodando." />
 
-  <meta property="og:title" content="Alexandre — Consultoria em IA">
-  <meta property="og:description" content="Mapeio seu processo, identifico onde a IA resolve de verdade e implemento.">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alexandre — ConsultorIA" />
+  <meta property="og:description" content="Mapeio seu processo, identifico onde a IA entrega valor e implemento a solução." />
+  <meta property="og:type" content="website" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
 
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/utilities.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/sections/header.css">
-  <link rel="stylesheet" href="css/sections/hero.css">
-  <link rel="stylesheet" href="css/sections/stats.css">
-  <link rel="stylesheet" href="css/sections/features.css">
-  <link rel="stylesheet" href="css/sections/profiles.css">
-  <link rel="stylesheet" href="css/sections/testimonial.css">
-  <link rel="stylesheet" href="css/sections/bento.css">
-  <link rel="stylesheet" href="css/sections/deliverables.css">
-  <link rel="stylesheet" href="css/sections/timeline.css">
-  <link rel="stylesheet" href="css/sections/word-reveal.css">
-  <link rel="stylesheet" href="css/sections/pricing.css">
-  <link rel="stylesheet" href="css/sections/faq.css">
-  <link rel="stylesheet" href="css/sections/cta-final.css">
-  <link rel="stylesheet" href="css/sections/footer.css">
-  <link rel="stylesheet" href="css/sections/fixed.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="#" class="header-logo">
-        <svg class="header-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
-          <path d="M12 14h6l2 3h8v12H12V14z" stroke="#000" stroke-width="1.5" fill="none"/>
-          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#1E4D8C"/><stop offset="1" stop-color="#4A90D9"/></linearGradient></defs>
-        </svg>
-        <span class="header-logo-text">Alexandre<span class="header-logo-sub">Consultor<span class="header-logo-ia">IA</span></span></span>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#inicio" class="brand" aria-label="Alexandre · ConsultorIA">
+        <span class="brand-name">Alexandre</span>
+        <span class="brand-role">Consultor<span class="brand-role-ia">IA</span></span>
       </a>
-      <nav class="header-nav">
+      <nav class="nav-links" aria-label="Primária">
         <a href="#processo">Processo</a>
         <a href="#entregaveis">Entregáveis</a>
         <a href="#engajamento">Modelos</a>
         <a href="#faq">FAQ</a>
-        <a href="#contato" class="btn-outline header-cta desktop-only">Agendar diagnóstico</a>
       </nav>
-      <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn btn--primary btn--sm nav-cta">Agendar diagnóstico</a>
+      <button class="nav-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu"></i>
       </button>
     </div>
-    <nav class="mobile-nav" style="display:none; position:absolute; top:100%; left:0; right:0; background:rgba(0,0,0,0.95); backdrop-filter:blur(12px); padding:24px 48px; flex-direction:column; gap:16px;">
-      <a href="#processo" style="font-size:18px; color:rgba(255,255,255,0.8); text-transform:uppercase; letter-spacing:0.05em;">Processo</a>
-      <a href="#entregaveis" style="font-size:18px; color:rgba(255,255,255,0.8); text-transform:uppercase; letter-spacing:0.05em;">Entregáveis</a>
-      <a href="#engajamento" style="font-size:18px; color:rgba(255,255,255,0.8); text-transform:uppercase; letter-spacing:0.05em;">Modelos</a>
-      <a href="#faq" style="font-size:18px; color:rgba(255,255,255,0.8); text-transform:uppercase; letter-spacing:0.05em;">FAQ</a>
-      <a href="#contato" class="btn-primary" style="margin-top:8px;">Agendar diagnóstico</a>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-grid-overlay"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="badge hero-badge">Consultoria · IA · Automação</span>
-        <h1 class="hero-title">
-          A <span class="highlight">Inteligência Orgânica</span> Para IA Funcionar de Verdade.
-        </h1>
-        <p class="hero-desc text-shine">
-          Mapeio seu processo, identifico onde a IA entrega valor e implemento a solução — do diagnóstico ao agente rodando.
-        </p>
-        <div class="hero-cta-group">
-          <a href="#contato" class="btn-primary">Agendar diagnóstico</a>
-          <a href="#processo" class="btn-outline">Ver como funciona</a>
-        </div>
-      </div>
-      <div class="hero-illustration">
-        <div class="hero-visual">
-          <div class="hero-ring"></div>
-          <div class="hero-ring"></div>
-          <div class="hero-ring"></div>
-          <div class="hero-core"><img src="assets/alexandre.png" alt="Alexandre" class="hero-photo"></div>
-          <div class="hero-chip hero-chip--1">Diagnóstico</div>
-          <div class="hero-chip hero-chip--2">Arquitetura</div>
-          <div class="hero-chip hero-chip--3">Agentes</div>
-          <div class="hero-chip hero-chip--4">Automação</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="stats-section" id="stats">
-    <div class="container-wide" style="margin:0 auto;">
-      <div class="stats-grid">
-        <div class="stat-card scroll-reveal" data-delay="0">
-          <div class="stat-number" data-count="88" data-suffix="%">0%</div>
-          <div style="font-family:'Outfit',sans-serif; font-size:18px; color:rgba(255,255,255,0.50); text-wrap:balance;">das empresas já usam IA em pelo menos uma função</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.25); margin-top:-4px;">McKinsey, 2025</div>
-        </div>
-        <div class="stat-card scroll-reveal" data-delay="200">
-          <div class="stat-number" data-count="92" data-suffix="%">0%</div>
-          <div style="font-family:'Outfit',sans-serif; font-size:18px; color:rgba(255,255,255,0.50); text-wrap:balance;">das empresas planejam aumentar investimentos em IA</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.25); margin-top:-4px;">McKinsey, 2025</div>
-        </div>
-        <div class="stat-card scroll-reveal" data-delay="400">
-          <div class="stat-number" data-count="64" data-suffix="%">0%</div>
-          <div style="font-family:'Outfit',sans-serif; font-size:18px; color:rgba(255,255,255,0.50); text-wrap:balance;">dizem que IA está habilitando inovação nos negócios</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.25); margin-top:-4px;">McKinsey, 2025</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services / Features -->
-  <section class="features-section" id="processo">
-    <div class="features-header scroll-reveal">
-      <div class="section-label">Por que agora</div>
-      <h2>IA não é diferencial. É <span class="gradient-text">infraestrutura</span>.</h2>
-      <p>Quem entende e implementa primeiro entrega mais rápido, com menos atrito, e libera o time para o que realmente importa.</p>
-    </div>
-    <div class="features-layout" data-tabs>
-      <div class="features-tabs">
-        <button class="tab-btn active" data-tab="f1">
-          <span class="tab-num">01</span>
-          <span>
-            <span class="tab-title">Antecipação</span>
-            <span class="tab-desc" style="display:block; font-size:12px; color:var(--surface-500); margin-top:2px;">Identificar onde a IA encurta o caminho antes da concorrência.</span>
-          </span>
-        </button>
-        <button class="tab-btn" data-tab="f2">
-          <span class="tab-num">02</span>
-          <span>
-            <span class="tab-title">Diferenciação</span>
-            <span class="tab-desc" style="display:block; font-size:12px; color:var(--surface-500); margin-top:2px;">Solução customizada para o seu contexto — não um template.</span>
-          </span>
-        </button>
-        <button class="tab-btn" data-tab="f3">
-          <span class="tab-num">03</span>
-          <span>
-            <span class="tab-title">Infraestrutura</span>
-            <span class="tab-desc" style="display:block; font-size:12px; color:var(--surface-500); margin-top:2px;">Agentes autônomos que executam, ajustam e entregam resultado contínuo.</span>
-          </span>
-        </button>
-      </div>
-      <div class="features-content">
-        <div class="feature-panel active" data-panel="f1">
-          <div class="feature-panel-inner" style="background: linear-gradient(135deg, oklch(0.25 0.02 250), oklch(0.20 0.02 300)); border-radius:16px; height:100%; display:flex; flex-direction:column; justify-content:center;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--atlas-c-start); display:block; margin-bottom:16px;">01 · Antecipação</span>
-            <h3 style="font-family:'Outfit',sans-serif; font-size:24px; font-weight:500; margin-bottom:16px; color:#fff; text-transform:uppercase;">Saia na frente sem reinventar o que você já faz bem.</h3>
-            <p style="font-size:16px; color:rgba(255,255,255,0.6); line-height:1.6;">Reviso o processo atual, encontro os pontos onde IA agrega valor real e desenho a implementação. Nada de transformação radical — automatizamos o que faz sentido, primeiro.</p>
-            <ul>
-              <li>Auditoria do processo atual</li>
-              <li>Mapeamento de pontos de alavancagem</li>
-              <li>Plano por etapas, com prioridade</li>
-            </ul>
-          </div>
-        </div>
-        <div class="feature-panel" data-panel="f2">
-          <div class="feature-panel-inner" style="background: linear-gradient(135deg, oklch(0.25 0.04 250), oklch(0.20 0.04 300)); border-radius:16px; height:100%; display:flex; flex-direction:column; justify-content:center;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--atlas-c-start); display:block; margin-bottom:16px;">02 · Diferenciação</span>
-            <h3 style="font-family:'Outfit',sans-serif; font-size:24px; font-weight:500; margin-bottom:16px; color:#fff; text-transform:uppercase;">Sua solução, construída para o seu contexto.</h3>
-            <p style="font-size:16px; color:rgba(255,255,255,0.6); line-height:1.6;">Cada cliente tem restrições próprias — orçamento, time, regulação, tecnologia legada. Trabalho a partir do que você tem, não do que seria ideal no PowerPoint.</p>
-            <ul>
-              <li>Arquitetura sob medida</li>
-              <li>Integração com o stack atual</li>
-              <li>Documentação clara para o time</li>
-            </ul>
-          </div>
-        </div>
-        <div class="feature-panel" data-panel="f3">
-          <div class="feature-panel-inner" style="background: linear-gradient(135deg, oklch(0.25 0.06 250), oklch(0.20 0.06 300)); border-radius:16px; height:100%; display:flex; flex-direction:column; justify-content:center;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--atlas-c-start); display:block; margin-bottom:16px;">03 · Infraestrutura</span>
-            <h3 style="font-family:'Outfit',sans-serif; font-size:24px; font-weight:500; margin-bottom:16px; color:#fff; text-transform:uppercase;">Agentes autônomos trabalhando o tempo todo.</h3>
-            <p style="font-size:16px; color:rgba(255,255,255,0.6); line-height:1.6;">Automação que funciona sozinha — sem depender de você pra cada passo. Agentes que executam, ajustam e entregam resultado contínuo.</p>
-            <ul>
-              <li>Processos que rodam sem intervenção</li>
-              <li>Ajustes automáticos em produção</li>
-              <li>Resultado contínuo, não entrega única</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Profiles / Para Quem -->
-  <section class="profiles-section" id="para-quem">
-    <div class="profiles-header scroll-reveal">
-      <div class="section-label">Pra quem é</div>
-      <h2>Pequenas equipes que <span class="gradient-text">querem escalar</span> como empresa grande.</h2>
-    </div>
-    <div class="profiles-grid">
-      <div class="profile-card scroll-reveal" data-delay="0">
-        <div class="profile-icon" style="background:rgba(30,77,140,0.1); border:1px solid rgba(30,77,140,0.2);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E4D8C" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Prestadores de serviço</h3>
-        <p>Que vendem tempo e querem escalar entrega sem aumentar headcount. Automação de tarefas repetitivas, atendimento e propostas.</p>
-      </div>
-      <div class="profile-card scroll-reveal" data-delay="200">
-        <div class="profile-icon" style="background:rgba(149,230,122,0.1); border:1px solid rgba(149,230,122,0.2);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#95E67A" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-        </div>
-        <h3>Pequenas e médias empresas</h3>
-        <p>Operação que cresceu mais rápido que o processo. Documentamos, organizamos e automatizamos os gargalos.</p>
-      </div>
-      <div class="profile-card scroll-reveal" data-delay="400">
-        <div class="profile-icon" style="background:rgba(123,169,249,0.1); border:1px solid rgba(123,169,249,0.2);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7BA9F9" stroke-width="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <h3>Times técnicos sem bandwidth</h3>
-        <p>Você sabe o que precisa, mas não tem tempo para arquitetar e implementar. Entro como consultor sênior temporário, entrego e documento.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quote / Principle -->
-  <section class="testimonial-section scroll-reveal">
-    <div class="testimonial-quote">
-      <div class="testimonial-mark">"</div>
-      <p class="testimonial-text">Cada solução é construída para o seu contexto. O que funciona para um cliente pode não funcionar para você — e isso é parte do trabalho.</p>
-      <div class="testimonial-author">
-        <span class="testimonial-name" style="background-image:var(--atlas-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Princípio de trabalho</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bento / Soluções -->
-  <section class="bento-section" id="solucoes">
-    <div class="bento-header scroll-reveal">
-      <div class="section-label">O que você ganha</div>
-      <h2>Da reunião inicial ao <span class="gradient-text">sistema em produção</span>.</h2>
-      <p>Quatro pilares que cobrem o ciclo completo — você pode contratar um, alguns ou todos.</p>
-    </div>
-    <div class="bento-grid">
-      <div class="bento-card scroll-reveal" data-delay="0">
-        <div class="bento-card-overlay" style="background: linear-gradient(135deg, oklch(0.25 0.04 250), oklch(0.20 0.02 300));"></div>
-        <div class="bento-card-content">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E4D8C" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </div>
-          <h3>Diagnóstico</h3>
-          <p>Reunião, coleta de materiais e análise do processo atual. Saio com um mapa do que existe, o que dói e onde a IA resolve de fato.</p>
-        </div>
-      </div>
-      <div class="bento-card scroll-reveal" data-delay="100">
-        <div class="bento-card-overlay" style="background: linear-gradient(135deg, oklch(0.25 0.03 300), oklch(0.20 0.02 340));"></div>
-        <div class="bento-card-content">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <h3>Documentação</h3>
-          <p>Tudo escrito para que seu time entenda e mantenha — sem caixa-preta.</p>
-        </div>
-      </div>
-      <div class="bento-card centered scroll-reveal" data-delay="200">
-        <div class="bento-card-overlay" style="background: linear-gradient(135deg, oklch(0.25 0.06 280), oklch(0.20 0.03 320));"></div>
-        <div class="bento-card-content">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7BA9F9" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 17 4-4 4 4 6-6"/></svg>
-          </div>
-          <h3>Arquitetura</h3>
-          <p>Desenho técnico da solução, escolha de ferramentas e plano por etapas.</p>
-        </div>
-      </div>
-      <div class="bento-card scroll-reveal" data-delay="300">
-        <div class="bento-card-overlay" style="background: linear-gradient(135deg, oklch(0.25 0.05 260), oklch(0.20 0.03 300));"></div>
-        <div class="bento-card-content">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#95E67A" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>Implementação</h3>
-          <p>Código rodando, integrado e testado. Agentes que funcionam sozinhos desde o início.</p>
-        </div>
-      </div>
-      <div class="bento-card scroll-reveal" data-delay="400">
-        <div class="bento-card-overlay" style="background: linear-gradient(135deg, oklch(0.25 0.04 270), oklch(0.20 0.02 310));"></div>
-        <div class="bento-card-content">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E4D8C" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          </div>
-          <h3>Acompanhamento</h3>
-          <p>Opcional, mas recomendado: ajustes, novas frentes e evolução conforme o sistema é usado de verdade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Deliverables -->
-  <section class="deliverables-section" id="entregaveis">
-    <div class="deliverables-header scroll-reveal">
-      <div class="section-label">O que sai do projeto</div>
-      <h2>Entregáveis <span class="gradient-text">concretos</span>, <span class="strikethrough-text">não slides</span>.</h2>
-    </div>
-    <div class="deliverables-grid">
-      <div class="deliverable-card scroll-reveal" data-delay="0">
-        <div class="deliverable-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-        </div>
-        <h3>Mapa de processo</h3>
-        <p>Fluxo atual documentado, com pontos de atrito identificados.</p>
-      </div>
-      <div class="deliverable-card scroll-reveal" data-delay="100">
-        <div class="deliverable-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3>Plano de ação</h3>
-        <p>Etapas, prazos e métricas — com prioridade definida.</p>
-      </div>
-      <div class="deliverable-card scroll-reveal" data-delay="200">
-        <div class="deliverable-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-        </div>
-        <h3>Arquitetura técnica</h3>
-        <p>Diagramas, escolha de ferramentas e razões por trás de cada decisão.</p>
-      </div>
-      <div class="deliverable-card scroll-reveal" data-delay="300">
-        <div class="deliverable-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <h3>Código + handoff</h3>
-        <p>Sistema funcionando, repositório organizado e seu time treinado.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline -->
-  <section class="timeline-section" id="como-funciona">
-    <div class="timeline-header scroll-reveal">
-      <div class="section-label">Como funciona</div>
-      <h2>Cinco etapas. Cada uma com <span class="gradient-text">saída clara</span>.</h2>
-    </div>
-    <div class="timeline-list">
-      <div class="timeline-item scroll-reveal" data-delay="0">
-        <div class="timeline-marker"><div class="timeline-dot"></div></div>
-        <div class="timeline-content">
-          <div class="timeline-step">Etapa 01</div>
-          <h3>Reunião</h3>
-          <p>Conversa inicial para entender contexto, dor e objetivo.</p>
-        </div>
-      </div>
-      <div class="timeline-item scroll-reveal" data-delay="100">
-        <div class="timeline-marker"><div class="timeline-dot"></div></div>
-        <div class="timeline-content">
-          <div class="timeline-step">Etapa 02</div>
-          <h3>Análise</h3>
-          <p>Coleto materiais, observo o processo, faço perguntas certas.</p>
-        </div>
-      </div>
-      <div class="timeline-item scroll-reveal" data-delay="200">
-        <div class="timeline-marker"><div class="timeline-dot"></div></div>
-        <div class="timeline-content">
-          <div class="timeline-step">Etapa 03</div>
-          <h3>Diagnóstico</h3>
-          <p>Mapa de oportunidades e riscos — escrito, defensável.</p>
-        </div>
-      </div>
-      <div class="timeline-item scroll-reveal" data-delay="300">
-        <div class="timeline-marker"><div class="timeline-dot"></div></div>
-        <div class="timeline-content">
-          <div class="timeline-step">Etapa 04</div>
-          <h3>Arquitetura</h3>
-          <p>Plano de implementação por etapas, com priorização clara.</p>
-        </div>
-      </div>
-      <div class="timeline-item scroll-reveal" data-delay="400">
-        <div class="timeline-marker"><div class="timeline-dot"></div></div>
-        <div class="timeline-content">
-          <div class="timeline-step">Etapa 05</div>
-          <h3>Implementação</h3>
-          <p>Construo, integro, documento e entrego para seu time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Word Reveal -->
-  <section class="word-reveal-section" id="reveal">
-    <div class="word-reveal-grid" id="wordRevealGrid" aria-hidden="true"></div>
-    <div class="word-reveal-content">
-      <p class="word-reveal-text" data-word-reveal>
-        IA não faz nada sem uma Inteligência Orgânica capaz de mapear e arquitetar toda documentação e infraestrutura que dê autonomia aos agentes.
-      </p>
-    </div>
-  </section>
-
-  <!-- Pricing / Engagement Models -->
-  <section class="pricing-section" id="engajamento">
-    <div class="pricing-header scroll-reveal">
-      <div class="section-label">Modelos de engajamento</div>
-      <h2>Escolha o formato que combina com o <span class="gradient-text">momento</span>.</h2>
-      <p>Sem amarras de longo prazo. Todo projeto começa por um diagnóstico — só seguimos se fizer sentido.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card featured scroll-reveal" data-delay="200">
-        <div class="pricing-badge">Recomendado</div>
-        <div class="pricing-tier">Projeto fechado</div>
-        <div class="pricing-price">
-          <div class="pricing-amount">Sob consulta</div>
-          <div class="pricing-period">Escopo definido, prazo combinado</div>
-        </div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Diagnóstico incluso</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Arquitetura + implementação</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Documentação técnica</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Handoff para o seu time</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>30 dias de garantia</div>
-        </div>
-        <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20de%20IA." target="_blank" rel="noopener" class="btn-primary" style="margin-top:auto;">Conversar</a>
-      </div>
-
-      <div class="pricing-card scroll-reveal" data-delay="400">
-        <div class="pricing-tier">Acompanhamento</div>
-        <div class="pricing-price">
-          <div class="pricing-amount">Sob consulta</div>
-          <div class="pricing-period">Mensal, manutenção e evolução</div>
-        </div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Evolução do sistema entregue</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Novas frentes de automação</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Reuniões quinzenais</div>
-          <div class="pricing-feature"><span class="pricing-feature-check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#1E4D8C" stroke-width="2"/></svg></span>Resposta priorizada</div>
-        </div>
-        <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20sua%20assessoria%20de%20IA." target="_blank" rel="noopener" class="btn-outline" style="margin-top:auto; height:48px; display:inline-flex;">Conversar</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section" id="faq">
-    <div class="faq-header scroll-reveal">
-      <div class="section-label">Perguntas frequentes</div>
-      <h2>Dúvidas comuns, <span class="gradient-text">respondidas direto</span>.</h2>
-    </div>
-    <div class="faq-list">
-      <div class="accordion-item">
-        <button class="accordion-trigger">
-          <span>Quanto custa um projeto?</span>
-          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </button>
-        <div class="accordion-content">
-          <p class="accordion-text">Depende do escopo. Por isso todo projeto começa com diagnóstico — só com ele em mãos faz sentido falar de preço. A faixa varia conforme complexidade, integrações e prazo.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger">
-          <span>Você usa qual stack de IA?</span>
-          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </button>
-        <div class="accordion-content">
-          <p class="accordion-text">Escolho ferramenta caso a caso: modelos da Anthropic, OpenAI, modelos locais; orquestração com Kestra, N8N, agentes customizados. A regra é: stack a serviço do problema, nunca o contrário.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger">
-          <span>Em quanto tempo vejo resultado?</span>
-          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </button>
-        <div class="accordion-content">
-          <p class="accordion-text">Implementações variam — automações pontuais ficam prontas em semanas, sistemas mais densos em meses. Sempre com entregas parciais ao longo do caminho.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger">
-          <span>Funciona pra quem não é da área de tecnologia?</span>
-          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </button>
-        <div class="accordion-content">
-          <p class="accordion-text">Sim. Você não precisa ser técnico — basta entender o seu negócio. Um parceiro que arquiteta a solução de IA pra você faz toda a diferença.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger">
-          <span>E se a IA não for a melhor solução?</span>
-          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </button>
-        <div class="accordion-content">
-          <p class="accordion-text">Eu falo. Parte do diagnóstico é reconhecer quando o problema é processo, gente ou ferramenta convencional. Não forço IA onde não cabe.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger">
-          <span>Como começamos?</span>
-          <span class="accordion-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </button>
-        <div class="accordion-content">
-          <p class="accordion-text">Uma conversa de 30 minutos, sem custo. Você me conta o contexto, eu falo se faz sentido seguir. Se sim, formalizo proposta de diagnóstico. Se não, indico um caminho — mesmo que não seja comigo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="cta-final-section" id="contato">
-    <div class="cta-final">
-      <h2>Vamos conversar sobre o seu processo?</h2>
-      <p>30 minutos, sem custo, sem compromisso. Você sai com um direcionamento — mesmo que a gente não trabalhe junto.</p>
-      <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn-primary cta-final-btn">Agendar pelo WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-left">
-      <span class="footer-logo">Alexandre</span>
-      <span class="footer-copy">&copy; <span id="year"></span>. Consultoria em IA.</span>
-    </div>
-    <div class="footer-links">
+    <nav class="nav-mobile" id="mobile-menu" hidden aria-label="Mobile">
       <a href="#processo">Processo</a>
       <a href="#entregaveis">Entregáveis</a>
       <a href="#engajamento">Modelos</a>
-      <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20de%20IA." target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn btn--primary">Agendar diagnóstico</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner container--wide">
+        <div class="hero-top">
+          <div class="hero-text">
+            <div class="hero-eyebrow">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Consultoria · IA · Automação</span>
+            </div>
+            <h1 class="hero-title">
+              A <em>Inteligência Orgânica</em> Para IA Funcionar de Verdade.
+            </h1>
+            <p class="hero-lede">
+              Mapeio seu processo, identifico onde a IA entrega valor e implemento a solução — do diagnóstico ao agente rodando.
+            </p>
+            <div class="hero-ctas">
+              <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+                Agendar diagnóstico <span aria-hidden="true">→</span>
+              </a>
+              <a href="#processo" class="btn btn--secondary btn--lg">Ver como funciona</a>
+            </div>
+          </div>
+          <figure class="hero-portrait">
+            <div class="hero-portrait-frame">
+              <img src="assets/alexandre.png" alt="Alexandre Afonso" class="hero-portrait-img" />
+              <div class="hero-portrait-overlay" aria-hidden="true"></div>
+              <span class="hero-portrait-tag">— Alexandre · ConsultorIA</span>
+            </div>
+          </figure>
+        </div>
+        <div class="hero-kpis reveal" role="list" data-stagger>
+          <div class="kpi" role="listitem">
+            <div class="kpi-value tabular"><span data-count-to="88">0</span><span class="kpi-unit">%</span></div>
+            <div class="kpi-label">das empresas já usam IA em pelo menos uma função</div>
+            <div class="kpi-source">McKinsey · 2025</div>
+          </div>
+          <div class="kpi" role="listitem">
+            <div class="kpi-value tabular"><span data-count-to="92">0</span><span class="kpi-unit">%</span></div>
+            <div class="kpi-label">planejam aumentar o investimento em IA</div>
+            <div class="kpi-source">McKinsey · 2025</div>
+          </div>
+          <div class="kpi" role="listitem">
+            <div class="kpi-value tabular"><span data-count-to="64">0</span><span class="kpi-unit">%</span></div>
+            <div class="kpi-label">dizem que IA já está habilitando inovação no negócio</div>
+            <div class="kpi-source">McKinsey · 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processo / Por que agora -->
+    <section class="section" id="processo">
+      <div class="container--wide">
+        <header class="section-head">
+          <div class="eyebrow">— Por que agora</div>
+          <h2 class="section-title">IA não é diferencial. É <em>infraestrutura</em>.</h2>
+          <p class="lede section-lede">Quem entende e implementa primeiro entrega mais rápido, com menos atrito, e libera o time para o que realmente importa.</p>
+        </header>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-num">01 — Antecipação</div>
+            <h3 class="pillar-title">Saia na frente sem reinventar o que você já faz bem.</h3>
+            <p class="pillar-desc">Reviso o processo atual, encontro pontos onde a IA agrega valor real e desenho a implementação. Sem transformação radical — automatizo o que faz sentido primeiro.</p>
+            <ul class="pillar-list">
+              <li><span class="pillar-bullet"></span>Auditoria do processo atual</li>
+              <li><span class="pillar-bullet"></span>Mapeamento de pontos de alavancagem</li>
+              <li><span class="pillar-bullet"></span>Plano por etapas, com prioridade</li>
+            </ul>
+          </article>
+          <article class="pillar">
+            <div class="pillar-num">02 — Diferenciação</div>
+            <h3 class="pillar-title">Sua solução, construída para o seu contexto.</h3>
+            <p class="pillar-desc">Cada cliente tem restrições próprias — orçamento, time, regulação, tecnologia legada. Trabalho a partir do que você tem, não do que seria ideal no PowerPoint.</p>
+            <ul class="pillar-list">
+              <li><span class="pillar-bullet"></span>Arquitetura sob medida</li>
+              <li><span class="pillar-bullet"></span>Integração com o stack atual</li>
+              <li><span class="pillar-bullet"></span>Documentação clara para o time</li>
+            </ul>
+          </article>
+          <article class="pillar">
+            <div class="pillar-num">03 — Infraestrutura</div>
+            <h3 class="pillar-title">Agentes autônomos trabalhando o tempo todo.</h3>
+            <p class="pillar-desc">Automação que funciona sozinha, sem depender de você para cada passo. Agentes que executam, ajustam e entregam resultado contínuo.</p>
+            <ul class="pillar-list">
+              <li><span class="pillar-bullet"></span>Processos rodando sem intervenção</li>
+              <li><span class="pillar-bullet"></span>Ajustes automáticos em produção</li>
+              <li><span class="pillar-bullet"></span>Resultado contínuo, não entrega única</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para quem -->
+    <section class="section" id="para-quem">
+      <div class="container--wide">
+        <header class="section-head">
+          <div class="eyebrow">— Para quem</div>
+          <h2 class="section-title">Equipes pequenas que <em>querem escalar</em> como empresa grande.</h2>
+        </header>
+        <div class="profiles-grid">
+          <article class="card card--hover profile">
+            <div class="profile-icon"><i data-lucide="users"></i></div>
+            <h3 class="card-title">Prestadores de serviço</h3>
+            <p class="card-desc">Quem vende tempo e quer escalar a entrega sem aumentar headcount. Automatizo tarefas repetitivas, atendimento e propostas.</p>
+          </article>
+          <article class="card card--hover profile">
+            <div class="profile-icon"><i data-lucide="layout-grid"></i></div>
+            <h3 class="card-title">Pequenas e médias empresas</h3>
+            <p class="card-desc">Operação que cresceu mais rápido que o processo. Documento, organizo e automatizo os gargalos.</p>
+          </article>
+          <article class="card card--hover profile">
+            <div class="profile-icon"><i data-lucide="code-2"></i></div>
+            <h3 class="card-title">Times técnicos sem bandwidth</h3>
+            <p class="card-desc">Você sabe o que precisa, mas não tem tempo para arquitetar e implementar. Entro como consultor sênior temporário, entrego e documento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Princípio (citação) -->
+    <section class="manifesto" id="principio">
+      <div class="manifesto-grid" aria-hidden="true"></div>
+      <div class="manifesto-inner">
+        <div class="eyebrow">— Princípio de trabalho</div>
+        <p class="manifesto-quote">
+          Cada solução é construída para o seu contexto. O que funciona para um cliente <em>pode não funcionar para você</em> — e isso é parte do trabalho.
+        </p>
+      </div>
+    </section>
+
+    <!-- Soluções -->
+    <section class="section" id="solucoes">
+      <div class="container--wide">
+        <header class="section-head">
+          <div class="eyebrow">— O que você ganha</div>
+          <h2 class="section-title">Da reunião inicial ao <em>sistema em produção</em>.</h2>
+          <p class="lede section-lede">Cinco pilares que cobrem o ciclo completo. Você pode contratar um, alguns ou todos.</p>
+        </header>
+        <div class="bento">
+          <article class="card card--hover bento-card">
+            <div class="bento-icon"><i data-lucide="search"></i></div>
+            <h3 class="card-title">Diagnóstico</h3>
+            <p class="card-desc">Reunião, coleta de materiais e análise do processo atual. Saio com um mapa do que existe, o que dói e onde a IA resolve de fato.</p>
+          </article>
+          <article class="card card--hover bento-card">
+            <div class="bento-icon"><i data-lucide="file-text"></i></div>
+            <h3 class="card-title">Documentação</h3>
+            <p class="card-desc">Tudo escrito para que seu time entenda e mantenha — sem caixa-preta.</p>
+          </article>
+          <article class="card card--hover bento-card bento-card--featured">
+            <div class="bento-icon"><i data-lucide="line-chart"></i></div>
+            <h3 class="card-title">Arquitetura</h3>
+            <p class="card-desc">Desenho técnico da solução, escolha de ferramentas e plano por etapas.</p>
+          </article>
+          <article class="card card--hover bento-card">
+            <div class="bento-icon"><i data-lucide="code-2"></i></div>
+            <h3 class="card-title">Implementação</h3>
+            <p class="card-desc">Código rodando, integrado e testado. Agentes que funcionam sozinhos desde o início.</p>
+          </article>
+          <article class="card card--hover bento-card">
+            <div class="bento-icon"><i data-lucide="settings"></i></div>
+            <h3 class="card-title">Acompanhamento</h3>
+            <p class="card-desc">Opcional, mas recomendado: ajustes, novas frentes e evolução conforme o sistema é usado de verdade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entregáveis -->
+    <section class="section" id="entregaveis">
+      <div class="container--wide">
+        <header class="section-head">
+          <div class="eyebrow">— O que sai do projeto</div>
+          <h2 class="section-title">Entregáveis <em>concretos</em>, <s>não slides</s>.</h2>
+        </header>
+        <div class="deliverables">
+          <div class="deliverable">
+            <div class="deliverable-num">— 01</div>
+            <div class="deliverable-icon"><i data-lucide="layout-dashboard"></i></div>
+            <h3 class="deliverable-title">Mapa de processo</h3>
+            <p class="deliverable-desc">Fluxo atual documentado, com pontos de atrito identificados.</p>
+          </div>
+          <div class="deliverable">
+            <div class="deliverable-num">— 02</div>
+            <div class="deliverable-icon"><i data-lucide="check-square"></i></div>
+            <h3 class="deliverable-title">Plano de ação</h3>
+            <p class="deliverable-desc">Etapas, prazos e métricas, com prioridade definida.</p>
+          </div>
+          <div class="deliverable">
+            <div class="deliverable-num">— 03</div>
+            <div class="deliverable-icon"><i data-lucide="layers"></i></div>
+            <h3 class="deliverable-title">Arquitetura técnica</h3>
+            <p class="deliverable-desc">Diagramas, escolha de ferramentas e razões por trás de cada decisão.</p>
+          </div>
+          <div class="deliverable">
+            <div class="deliverable-num">— 04</div>
+            <div class="deliverable-icon"><i data-lucide="terminal"></i></div>
+            <h3 class="deliverable-title">Código + hand-off</h3>
+            <p class="deliverable-desc">Sistema funcionando, repositório organizado e seu time treinado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="section" id="como-funciona">
+      <div class="container--wide">
+        <header class="section-head">
+          <div class="eyebrow">— Como funciona</div>
+          <h2 class="section-title">Cinco etapas. Cada uma com <em>saída clara</em>.</h2>
+        </header>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-step">Etapa 01</div>
+              <h3 class="timeline-title">Reunião</h3>
+              <p class="timeline-desc">Conversa inicial para entender contexto, dor e objetivo.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-step">Etapa 02</div>
+              <h3 class="timeline-title">Análise</h3>
+              <p class="timeline-desc">Coleto materiais, observo o processo, faço as perguntas certas.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-step">Etapa 03</div>
+              <h3 class="timeline-title">Diagnóstico</h3>
+              <p class="timeline-desc">Mapa de oportunidades e riscos — escrito, defensável.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-step">Etapa 04</div>
+              <h3 class="timeline-title">Arquitetura</h3>
+              <p class="timeline-desc">Plano de implementação por etapas, com priorização clara.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-step">Etapa 05</div>
+              <h3 class="timeline-title">Implementação</h3>
+              <p class="timeline-desc">Construo, integro, documento e entrego para o seu time.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Manifesto / Inteligência Orgânica -->
+    <section class="manifesto manifesto--alt" id="manifesto">
+      <div class="manifesto-grid" aria-hidden="true"></div>
+      <div class="manifesto-inner">
+        <div class="eyebrow">— Inteligência Orgânica</div>
+        <p class="manifesto-quote">
+          IA não faz nada sem uma <em>Inteligência Orgânica</em> capaz de mapear e arquitetar toda a documentação e infraestrutura que dê autonomia aos agentes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Modelos de engajamento -->
+    <section class="section" id="engajamento">
+      <div class="container--wide">
+        <header class="section-head">
+          <div class="eyebrow">— Modelos de engajamento</div>
+          <h2 class="section-title">Escolha o formato que combina com o <em>momento</em>.</h2>
+          <p class="lede section-lede">Sem amarras de longo prazo. Todo projeto começa por um diagnóstico — só seguimos se fizer sentido.</p>
+        </header>
+        <div class="pricing">
+          <article class="card pricing-card pricing-card--featured">
+            <div class="pricing-head">
+              <div class="pricing-tier">Projeto fechado</div>
+              <span class="badge badge--amber">Recomendado</span>
+            </div>
+            <div class="pricing-price">
+              <div class="pricing-amount">Sob consulta</div>
+              <div class="pricing-period">Escopo definido, prazo combinado</div>
+            </div>
+            <ul class="pricing-features">
+              <li><i data-lucide="check"></i>Diagnóstico incluso</li>
+              <li><i data-lucide="check"></i>Arquitetura + implementação</li>
+              <li><i data-lucide="check"></i>Documentação técnica</li>
+              <li><i data-lucide="check"></i>Hand-off para o seu time</li>
+              <li><i data-lucide="check"></i>30 dias de garantia</li>
+            </ul>
+            <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20de%20IA." target="_blank" rel="noopener" class="btn btn--primary btn--lg pricing-cta">Conversar <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="card pricing-card">
+            <div class="pricing-head">
+              <div class="pricing-tier">Acompanhamento</div>
+            </div>
+            <div class="pricing-price">
+              <div class="pricing-amount">Sob consulta</div>
+              <div class="pricing-period">Mensal · manutenção e evolução</div>
+            </div>
+            <ul class="pricing-features">
+              <li><i data-lucide="check"></i>Evolução do sistema entregue</li>
+              <li><i data-lucide="check"></i>Novas frentes de automação</li>
+              <li><i data-lucide="check"></i>Reuniões quinzenais</li>
+              <li><i data-lucide="check"></i>Resposta priorizada</li>
+            </ul>
+            <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20sua%20assessoria%20de%20IA." target="_blank" rel="noopener" class="btn btn--secondary btn--lg pricing-cta">Conversar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-head">
+          <div class="eyebrow">— Perguntas frequentes</div>
+          <h2 class="section-title">Dúvidas comuns, <em>respondidas direto</em>.</h2>
+        </header>
+        <div class="faq">
+          <details class="faq-item">
+            <summary><span>Quanto custa um projeto?</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
+            <p>Depende do escopo. Por isso todo projeto começa com diagnóstico — só com ele em mãos faz sentido falar de preço. A faixa varia conforme complexidade, integrações e prazo.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Qual stack de IA você usa?</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
+            <p>Escolho ferramenta caso a caso: modelos da Anthropic, OpenAI, modelos locais; orquestração com Kestra, N8N, agentes customizados. A regra é: stack a serviço do problema, nunca o contrário.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Em quanto tempo vejo resultado?</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
+            <p>Automações pontuais ficam prontas em semanas. Sistemas mais densos em meses. Sempre com entregas parciais ao longo do caminho.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Funciona para quem não é da área de tecnologia?</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
+            <p>Sim. Você não precisa ser técnico — basta entender o seu negócio. Um parceiro que arquiteta a solução de IA para você faz toda a diferença.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>E se a IA não for a melhor solução?</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
+            <p>Eu falo. Parte do diagnóstico é reconhecer quando o problema é processo, gente ou ferramenta convencional. Não forço IA onde não cabe.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Como começamos?</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
+            <p>Uma conversa de 30 minutos, sem custo. Você me conta o contexto, eu falo se faz sentido seguir. Se sim, formalizo proposta de diagnóstico. Se não, indico um caminho — mesmo que não seja comigo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="section cta-final" id="contato">
+      <div class="container">
+        <div class="cta-final-inner">
+          <div class="eyebrow">— Próximo passo</div>
+          <h2 class="cta-final-title">Vamos conversar sobre o seu processo?</h2>
+          <p class="lede cta-final-lede">30 minutos, sem custo, sem compromisso. Você sai com um direcionamento — mesmo que a gente não trabalhe junto.</p>
+          <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+            Agendar pelo WhatsApp <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container--wide footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Alexandre</span>
+          <span class="brand-role">Consultor<span class="brand-role-ia">IA</span></span>
+          <p class="footer-tag">Consultoria solo em IA aplicada para prestadores de serviço e pequenas e médias empresas. Documentação, arquitetura e implementação sob medida.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Navegar</div>
+          <a href="#processo">Processo</a>
+          <a href="#entregaveis">Entregáveis</a>
+          <a href="#engajamento">Modelos</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contato</div>
+          <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20de%20IA." target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:contato@alexandre.ai">E-mail</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Alexandre Afonso · ConsultorIA</span>
+        <span>Uberaba · BR · UTC−3</span>
+      </div>
     </div>
   </footer>
 
-  <!-- Fixed Elements -->
-  <div class="fixed-bar-desktop">
-    <span class="fixed-bar-label">Pronto pra começar?</span>
-    <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn-primary" style="height:44px; padding:0 20px; font-size:14px;">Agendar diagnóstico</a>
-  </div>
-
+  <!-- Fixed mobile CTA -->
   <div class="fixed-bar-mobile">
-    <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn-primary" style="width:100%; height:48px; font-size:16px;">Agendar diagnóstico</a>
-    <span class="fixed-bar-label">Sem compromisso</span>
+    <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="btn btn--primary btn--lg">Agendar diagnóstico</a>
   </div>
 
-  <button class="back-to-top" aria-label="Voltar ao topo">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M4 10l6-6 6 6" stroke="currentColor" stroke-width="1.5"/></svg>
-  </button>
-
-  
-
-  <!-- Contact anchor -->
-  <div id="contato" style="position:relative; top:-100px;"></div>
-
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/gsap-animations.js"></script>
-  <script src="js/main.js"></script>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.querySelectorAll('.tab-num').forEach(function(el) {
-      el.style.fontFamily = "'JetBrains Mono', monospace";
-      el.style.fontSize = '12px';
-      el.style.color = 'var(--atlas-c-start)';
-      el.style.marginRight = '8px';
-    });
-    document.querySelectorAll('.tab-title').forEach(function(el) {
-      el.style.fontFamily = "'Outfit', sans-serif";
-      el.style.fontWeight = '500';
-      el.style.fontSize = '14px';
-      el.style.textTransform = 'uppercase';
-      el.style.letterSpacing = '0.05em';
-      el.style.color = 'inherit';
-      el.style.display = 'block';
-    });
-  </script>
-
+  <script src="main.js" defer></script>
 </body>
 </html>
