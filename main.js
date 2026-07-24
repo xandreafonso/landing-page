@@ -1,6 +1,15 @@
 (function () {
   "use strict";
 
+  // ----- Scroll restoration -----
+  // Impede o browser de restaurar uma posição no meio da página antes do
+  // ScrollTrigger montar o pin do hero — o que deixava um vão vazio no topo
+  // ao dar F5 com a página rolada. Sem hash na URL, sempre começa no topo.
+  if (window.history && "scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+  if (!window.location.hash) window.scrollTo(0, 0);
+
   // ----- Lucide icons -----
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
@@ -45,6 +54,14 @@
   var gsap = window.gsap;
   var ScrollTrigger = window.ScrollTrigger;
   if (ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+  // Recalcula posições depois que imagens/fontes carregam, para o pin do hero
+  // usar as alturas reais (evita o vão vazio no topo em reload).
+  if (ScrollTrigger) {
+    window.addEventListener("load", function () {
+      ScrollTrigger.refresh();
+    });
+  }
 
   // ----- Word splitter (preserves <em> and other inline children) -----
   function splitWords(root) {
