@@ -22,7 +22,7 @@ Static landing page (no build step, no bundler, no framework). Served as-is — 
 
 ## WhatsApp CTAs
 
-All CTA links point to `api.whatsapp.com/send?phone=553497855` with different pre-filled messages per context. Do not normalize or consolidate these URLs — each context intentionally has a distinct message
+All CTA links point to `api.whatsapp.com/send?phone=553497227855` with different pre-filled messages per context. Do not normalize or consolidate these URLs — each context intentionally has a distinct message
 
 ## Gotchas
 
