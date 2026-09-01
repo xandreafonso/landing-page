@@ -237,7 +237,7 @@
     // Palavras dentro de <em> terminam em âmbar
     if (emWordInners.length) {
       gsap.to(emWordInners, {
-        color: "rgb(245,158,11)",
+        color: "rgb(14, 165, 233)",
         ease: "none",
         stagger: { each: 0.06, from: "start" },
         scrollTrigger: {
@@ -347,8 +347,8 @@
         trigger: item, start: "top 75%", once: true,
         onEnter: function () {
           gsap.to(dot, {
-            backgroundColor: "rgb(245,158,11)",
-            borderColor: "rgb(245,158,11)",
+            backgroundColor: "rgb(14, 165, 233)",
+            borderColor: "rgb(14, 165, 233)",
             boxShadow: "0 0 0 3px rgba(245,158,11,0.18)",
             duration: 0.4, ease: "power2.out"
           });
