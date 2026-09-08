@@ -1,226 +1,460 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="scheme-dark scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diagnóstico de IA — Alexandre Afonso</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body class="m-0 bg-[#060b16] text-[#eef2f9] font-['Geist',ui-sans-serif,system-ui,sans-serif] text-[15px] leading-normal antialiased [text-rendering:optimizeLegibility] selection:bg-[#0ea5e9] selection:text-[#03111f]">
-
-<!-- ambient glow -->
-<div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-  <div class="absolute -top-[18%] left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.07),transparent_70%)] blur-3xl"></div>
-  <div class="absolute top-[42%] -right-[8%] w-[380px] h-[380px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.035),transparent_70%)] blur-3xl"></div>
-</div>
-
-<!-- HERO -->
-<section class="relative z-10 overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
-  <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[56px_56px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_18%,black_18%,transparent_72%)] [-webkit-mask-image:radial-gradient(ellipse_80%_70%_at_50%_18%,black_18%,transparent_72%)]"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.11),transparent_65%)] blur-2xl"></div>
-
-  <div class="relative max-w-[680px] mx-auto px-6 text-center">
-
-    <div id="h-eyebrow" class="reveal opacity-0 motion-reduce:opacity-100 mb-8 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]">
-      <span class="relative flex size-2">
-        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0ea5e9] opacity-40"></span>
-        <span class="relative inline-flex size-2 rounded-full bg-[#0ea5e9] shadow-[0_0_12px_rgba(14,165,233,0.7)]"></span>
-      </span>
-      Diagnóstico de IA · gratuito · 30 min
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnóstico de IA — Alexandre Afonso</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="m-0 bg-[#060b16] text-[#eef2f9] font-['Geist',ui-sans-serif,system-ui,sans-serif] text-[15px] leading-normal antialiased [text-rendering:optimizeLegibility] selection:bg-[#0ea5e9] selection:text-[#03111f]"
+  >
+    <!-- ambient glow -->
+    <div
+      class="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      aria-hidden="true"
+    >
+      <div
+        class="absolute -top-[18%] left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.07),transparent_70%)] blur-3xl"
+      ></div>
+      <div
+        class="absolute top-[42%] -right-[8%] w-[380px] h-[380px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.035),transparent_70%)] blur-3xl"
+      ></div>
     </div>
 
-    <h1 id="h-line1" class="reveal opacity-0 motion-reduce:opacity-100 text-[clamp(36px,6.5vw,54px)] font-medium tracking-[-0.045em] leading-[1.05] text-[#eef2f9] text-balance">
-      Diagnóstico de IA
-    </h1>
-    <h1 id="h-line2" class="reveal opacity-0 motion-reduce:opacity-100 text-[clamp(36px,6.5vw,54px)] font-medium tracking-[-0.045em] leading-[1.05] text-[#eef2f9] text-balance mb-8">
-      para o seu <span class="bg-gradient-to-r from-[#eef2f9] via-[#7dd3fc] to-[#0ea5e9] bg-clip-text text-transparent">negócio.</span>
-    </h1>
+    <!-- HERO -->
+    <section
+      class="relative z-10 overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[56px_56px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_18%,black_18%,transparent_72%)] [-webkit-mask-image:radial-gradient(ellipse_80%_70%_at_50%_18%,black_18%,transparent_72%)]"
+      ></div>
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.11),transparent_65%)] blur-2xl"
+      ></div>
 
-    <p id="h-lede" class="reveal opacity-0 motion-reduce:opacity-100 text-lg leading-relaxed text-[#a9b4c8] tracking-[-0.01em] font-normal max-w-[460px] mx-auto mb-11">
-      Você não precisa de mais uma opinião sobre IA. Precisa saber, <span class="font-bold text-slate-200">de forma clara, se e onde ela faz sentido no seu negócio</span>.
-    </p>
-
-    <div id="h-cta-wrap" class="reveal opacity-0 motion-reduce:opacity-100 mb-16 flex justify-center">
-      <a id="h-cta" href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="group relative inline-flex items-center gap-2.5 h-12 px-7 rounded-lg font-medium tracking-[-0.012em] text-[15px] text-[#03111f] bg-[#0ea5e9] border border-[#0ea5e9]/70 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_4px_20px_-4px_rgba(14,165,233,0.45),0_0_40px_-8px_rgba(14,165,233,0.25)] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#38bdf8] hover:border-[#38bdf8] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35),0_6px_28px_-4px_rgba(56,189,248,0.5),0_0_50px_-6px_rgba(56,189,248,0.3)] active:translate-y-px">
-        Agendar meu diagnóstico
-        <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-      </a>
-    </div>
-
-    <div id="h-byline" class="reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 justify-center pt-7 border-t border-white/[0.06] max-w-[380px] mx-auto">
-      <div class="relative size-12 rounded-full overflow-hidden shrink-0 border border-white/15 bg-[#0e172a] shadow-[0_0_0_1px_rgba(14,165,233,0.15),0_4px_16px_-4px_rgba(0,0,0,0.5)]">
-        <img src="https://alexandreafonso.com.br/assets/alexandre.png" alt="Alexandre Afonso" class="w-full h-full object-cover">
-        <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10"></div>
-      </div>
-      <div class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] tracking-[0.04em] text-[#6b7894] leading-snug text-left">
-        CONDUZIDO POR<br>
-        <span class="text-[#c4cddc]">Alexandre Afonso · Consultor de IA</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROBLEMA -->
-<section class="relative z-10 border-t border-white/[0.06] py-22 md:py-28">
-  <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(14,165,233,0.035),transparent_70%)]"></div>
-  <div class="relative max-w-[680px] mx-auto px-6 text-center">
-    <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-7 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]">
-      <span class="text-[#5a6780]">— 01</span> O problema
-    </div>
-    <p class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 text-[clamp(26px,3.5vw,32px)] font-semibold tracking-[-0.02em] leading-[1.28] text-[#eef2f9] text-balance mb-7 max-w-[540px] mx-auto">
-      Todo mundo fala de IA. Poucos falam sobre o que ela exige para funcionar direito.
-    </p>
-    <p class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 max-w-[500px] mx-auto text-[16px] text-[#a9b4c8] leading-[1.7]">
-      O resultado: empresários investindo em IA sem clareza sobre pré-requisitos, escopo ou retorno — e sem saber se o problema é a ferramenta ou a falta de preparo. O diagnóstico te ajuda a mudar isso.
-    </p>
-  </div>
-</section>
-
-<!-- O QUE VOCÊ LEVA -->
-<section class="relative z-10 py-22 md:py-28">
-  <div class="max-w-[680px] mx-auto px-6 text-center">
-    <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-5 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]">
-      <span class="text-[#5a6780]">— 02</span> O que você leva do diagnóstico
-    </div>
-    <p class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-10 text-[15px] text-[#7a879e] max-w-md mx-auto">
-      Em menos de uma hora, comigo, onde você sai sabendo:
-    </p>
-
-    <div class="max-w-[520px] mx-auto text-left">
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg">
-        <span class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7">01</span>
-        <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5">O cenário real da IA hoje — sem hype.</span>
-      </div>
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg">
-        <span class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7">02</span>
-        <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5">As possibilidades avançadas de IA que se aplicam à sua operação.</span>
-      </div>
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg">
-        <span class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7">03</span>
-        <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5">Os pré-requisitos que um projeto de IA precisa ter para funcionar no seu caso.</span>
-      </div>
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-b border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg">
-        <span class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7">04</span>
-        <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5">O próximo passo — com ou sem mim.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- O QUE NÃO É -->
-<section class="relative z-10 border-t border-white/[0.06] py-22 md:py-28">
-  <div class="max-w-[680px] mx-auto px-6 text-center">
-    <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-8 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]">
-      <span class="text-[#5a6780]">— 03</span> O que não é
-    </div>
-    <div class="grid gap-3 max-w-md mx-auto text-left">
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-        <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400/90 text-[11px] font-medium">✕</span>
-        <span class="text-[15px] text-[#b8c2d4]">Não é uma demonstração de ferramenta.</span>
-      </div>
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-        <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400/90 text-[11px] font-medium">✕</span>
-        <span class="text-[15px] text-[#b8c2d4]">Não é uma proposta comercial disfarçada.</span>
-      </div>
-      <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-        <span class="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400/90 text-[11px] font-medium">✕</span>
-        <span class="text-[15px] text-[#b8c2d4]">Não é promessa de resultado.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="relative z-10 overflow-hidden border-t border-white/[0.06] bg-[#080f1c] pt-24 pb-20 md:pt-28 md:pb-24">
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[260px] bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.1),transparent_65%)] blur-2xl"></div>
-  </div>
-  <div class="relative max-w-[680px] mx-auto px-6 text-center">
-    <p class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 text-[clamp(26px,3.5vw,32px)] font-semibold tracking-[-0.02em] leading-[1.28] text-[#eef2f9] text-balance mb-10 max-w-[520px] mx-auto">
-      <span class="text-[#f87171]">Decisão de IA malfeita custa caro.</span><br>
-      O diagnóstico custa o tempo de uma call online.
-    </p>
-    <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-12 flex justify-center">
-      <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="group relative inline-flex items-center gap-2.5 h-12 px-7 rounded-lg font-medium tracking-[-0.012em] text-[15px] text-[#03111f] bg-[#0ea5e9] border border-[#0ea5e9]/70 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_4px_20px_-4px_rgba(14,165,233,0.45),0_0_40px_-8px_rgba(14,165,233,0.25)] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#38bdf8] hover:border-[#38bdf8] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35),0_6px_28px_-4px_rgba(56,189,248,0.5),0_0_50px_-6px_rgba(56,189,248,0.3)] active:translate-y-px">
-        Agendar meu diagnóstico
-        <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-      </a>
-    </div>
-    <p class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 border-t border-white/[0.06] pt-8 text-[15px] text-[#8b97ad] max-w-[400px] mx-auto leading-relaxed">
-      Diagnóstico é clareza para tomar decisão. A implementação de IA, você decide depois.
-    </p>
-  </div>
-</section>
-
-<!-- QUEM CONDUZ -->
-<section class="relative z-10 border-t border-white/[0.06] py-22 md:py-28">
-  <div class="max-w-[680px] mx-auto px-6 text-center">
-    <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-10 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]">
-      <span class="text-[#5a6780]">— 04</span> Quem conduz
-    </div>
-    <div class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex flex-col items-center gap-6 max-w-[480px] mx-auto">
-      <div class="relative size-[142px] rounded-2xl overflow-hidden shrink-0 border border-white/15 bg-[#0e172a] shadow-[0_0_0_1px_rgba(14,165,233,0.12),0_8px_24px_-6px_rgba(0,0,0,0.5)]">
-        <img src="https://alexandreafonso.com.br/assets/alexandre.png" alt="Alexandre Afonso" class="w-full h-full object-cover">
-        <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10"></div>
-      </div>
-      <div>
-        <div class="font-['Geist_Mono',ui-monospace,Menlo,monospace] mb-3 text-[11px] tracking-[0.08em] text-[#6b7894]">
-          ALEXANDRE AFONSO · CONSULTOR DE IA
+      <div class="relative max-w-[680px] mx-auto px-6 text-center">
+        <div
+          id="h-eyebrow"
+          class="reveal opacity-0 motion-reduce:opacity-100 mb-8 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]"
+        >
+          <span class="relative flex size-2">
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0ea5e9] opacity-40"
+            ></span>
+            <span
+              class="relative inline-flex size-2 rounded-full bg-[#0ea5e9] shadow-[0_0_12px_rgba(14,165,233,0.7)]"
+            ></span>
+          </span>
+          Diagnóstico de IA · gratuito · 30 min
         </div>
-        <p class="text-[16px] text-[#a9b4c8] leading-[1.7]">
-          Trabalho com tecnologia há quase 20 anos e com marketing — tráfego, social media, estratégia, copy — desde 2018. Desde o lançamento do ChatGPT, uso essa combinação para implementar agentes de IA que funcionam dentro do negócio de verdade, não só no papel.
+
+        <h1
+          id="h-line1"
+          class="reveal opacity-0 motion-reduce:opacity-100 text-[clamp(36px,6.5vw,54px)] font-medium tracking-[-0.045em] leading-[1.05] text-[#eef2f9] text-balance"
+        >
+          Diagnóstico de IA
+        </h1>
+        <h1
+          id="h-line2"
+          class="reveal opacity-0 motion-reduce:opacity-100 text-[clamp(36px,6.5vw,54px)] font-medium tracking-[-0.045em] leading-[1.05] text-[#eef2f9] text-balance mb-8"
+        >
+          para o seu
+          <span
+            class="bg-gradient-to-r from-[#eef2f9] via-[#7dd3fc] to-[#0ea5e9] bg-clip-text text-transparent"
+            >negócio.</span
+          >
+        </h1>
+
+        <p
+          id="h-lede"
+          class="reveal opacity-0 motion-reduce:opacity-100 text-lg leading-relaxed text-[#a9b4c8] tracking-[-0.01em] font-normal max-w-[460px] mx-auto mb-11"
+        >
+          Você não precisa de mais uma opinião sobre IA. Precisa saber,
+          <span class="font-bold text-slate-200"
+            >de forma clara, se e onde ela faz sentido no seu negócio</span
+          >.
+        </p>
+
+        <div
+          id="h-cta-wrap"
+          class="reveal opacity-0 motion-reduce:opacity-100 mb-16 flex flex-col gap-2 justify-center"
+        >
+          <div>
+            <a
+              id="h-cta"
+              href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio."
+              target="_blank"
+              rel="noopener"
+              class="group relative inline-flex items-center gap-2.5 h-12 px-7 rounded-lg font-medium tracking-[-0.012em] text-[15px] text-[#03111f] bg-[#0ea5e9] border border-[#0ea5e9]/70 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_4px_20px_-4px_rgba(14,165,233,0.45),0_0_40px_-8px_rgba(14,165,233,0.25)] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#38bdf8] hover:border-[#38bdf8] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35),0_6px_28px_-4px_rgba(56,189,248,0.5),0_0_50px_-6px_rgba(56,189,248,0.3)] active:translate-y-px"
+            >
+              Agendar meu diagnóstico
+              <span
+                aria-hidden="true"
+                class="transition-transform duration-200 group-hover:translate-x-0.5"
+                >→</span
+              >
+            </a>
+          </div>
+          <div class="text-xs text-sky-500">Diagnóstico de IA Gratuito</div>
+        </div>
+
+        <div
+          id="h-byline"
+          class="reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 justify-center pt-7 border-t border-white/[0.06] max-w-[380px] mx-auto"
+        >
+          <div
+            class="relative size-12 rounded-full overflow-hidden shrink-0 border border-white/15 bg-[#0e172a] shadow-[0_0_0_1px_rgba(14,165,233,0.15),0_4px_16px_-4px_rgba(0,0,0,0.5)]"
+          >
+            <img
+              src="https://alexandreafonso.com.br/assets/alexandre.png"
+              alt="Alexandre Afonso"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10"
+            ></div>
+          </div>
+          <div
+            class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] tracking-[0.04em] text-[#6b7894] leading-snug text-left"
+          >
+            CONDUZIDO POR<br />
+            <span class="text-[#c4cddc]"
+              >Alexandre Afonso · Consultor de IA</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="relative z-10 border-t border-white/[0.06] py-22 md:py-28">
+      <div
+        class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(14,165,233,0.035),transparent_70%)]"
+      ></div>
+      <div class="relative max-w-[680px] mx-auto px-6 text-center">
+        <div
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-7 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]"
+        >
+          <span class="text-[#5a6780]">— 01</span> O problema
+        </div>
+        <p
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 text-[clamp(26px,3.5vw,32px)] font-semibold tracking-[-0.02em] leading-[1.28] text-[#eef2f9] text-balance mb-7 max-w-[540px] mx-auto"
+        >
+          Todo mundo fala de IA. Poucos falam sobre o que ela exige para
+          funcionar direito.
+        </p>
+        <p
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 max-w-[500px] mx-auto text-[16px] text-[#a9b4c8] leading-[1.7]"
+        >
+          O resultado: empresários investindo em IA sem clareza sobre
+          pré-requisitos, escopo ou retorno — e sem saber se o problema é a
+          ferramenta ou a falta de preparo. O diagnóstico te ajuda a mudar isso.
         </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CTA FINAL 2 -->
-<section class="relative z-10 overflow-hidden bg-[#080f1c] py-20 md:py-24">
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[180px] bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.09),transparent_65%)] blur-2xl"></div>
-  </div>
-  <div class="relative max-w-[680px] mx-auto px-6 flex justify-center">
-    <a href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 group relative inline-flex items-center gap-2.5 h-12 px-7 rounded-lg font-medium tracking-[-0.012em] text-[15px] text-[#03111f] bg-[#0ea5e9] border border-[#0ea5e9]/70 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_4px_20px_-4px_rgba(14,165,233,0.45),0_0_40px_-8px_rgba(14,165,233,0.25)] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#38bdf8] hover:border-[#38bdf8] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35),0_6px_28px_-4px_rgba(56,189,248,0.5),0_0_50px_-6px_rgba(56,189,248,0.3)] active:translate-y-px">
-      Agendar meu diagnóstico
-      <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-    </a>
-  </div>
-</section>
+    <!-- O QUE VOCÊ LEVA -->
+    <section class="relative z-10 py-22 md:py-28">
+      <div class="max-w-[680px] mx-auto px-6 text-center">
+        <div
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-5 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]"
+        >
+          <span class="text-[#5a6780]">— 02</span> O que você leva do
+          diagnóstico
+        </div>
+        <p
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-10 text-[15px] text-[#7a879e] max-w-md mx-auto"
+        >
+          Em menos de uma hora, comigo, onde você sai sabendo:
+        </p>
 
-<!-- FOOTER -->
-<footer class="relative z-10 border-t border-white/[0.05] py-9">
-  <div class="max-w-[680px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] tracking-[0.1em] uppercase text-[#5a6780]">
-    <span>Alexandre Afonso · ConsultorIA</span>
-    <span>Diagnóstico de IA</span>
-  </div>
-</footer>
+        <div class="max-w-[520px] mx-auto text-left">
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg"
+          >
+            <span
+              class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7"
+              >01</span
+            >
+            <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5"
+              >O cenário real da IA hoje — sem hype.</span
+            >
+          </div>
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg"
+          >
+            <span
+              class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7"
+              >02</span
+            >
+            <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5"
+              >As possibilidades avançadas de IA que se aplicam à sua
+              operação.</span
+            >
+          </div>
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg"
+          >
+            <span
+              class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7"
+              >03</span
+            >
+            <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5"
+              >Os pré-requisitos que um projeto de IA precisa ter para funcionar
+              no seu caso.</span
+            >
+          </div>
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex gap-5 items-start py-5 border-t border-b border-white/[0.07] transition-colors duration-200 hover:bg-white/[0.015] -mx-3 px-3 rounded-lg"
+          >
+            <span
+              class="font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[12px] text-[#0ea5e9]/80 tracking-[0.06em] shrink-0 pt-0.5 w-7"
+              >04</span
+            >
+            <span class="text-[16px] text-[#eef2f9] leading-snug pt-0.5"
+              >O próximo passo — com ou sem mim.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
+    <!-- O QUE NÃO É -->
+    <section class="relative z-10 border-t border-white/[0.06] py-22 md:py-28">
+      <div class="max-w-[680px] mx-auto px-6 text-center">
+        <div
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-8 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]"
+        >
+          <span class="text-[#5a6780]">— 03</span> O que não é
+        </div>
+        <div class="grid gap-3 max-w-md mx-auto text-left">
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]"
+          >
+            <span
+              class="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400/90 text-[11px] font-medium"
+              >✕</span
+            >
+            <span class="text-[15px] text-[#b8c2d4]"
+              >Não é uma demonstração de ferramenta.</span
+            >
+          </div>
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]"
+          >
+            <span
+              class="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400/90 text-[11px] font-medium"
+              >✕</span
+            >
+            <span class="text-[15px] text-[#b8c2d4]"
+              >Não é uma proposta comercial disfarçada.</span
+            >
+          </div>
+          <div
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]"
+          >
+            <span
+              class="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400/90 text-[11px] font-medium"
+              >✕</span
+            >
+            <span class="text-[15px] text-[#b8c2d4]"
+              >Não é promessa de resultado.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
-document.fonts.ready.then(() => {
-  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-  tl.fromTo("#h-eyebrow", {y:-8,opacity:0}, {y:0,opacity:1,duration:.55}, 0.04)
-    .fromTo("#h-line1", {y:26,opacity:0}, {y:0,opacity:1,duration:.75}, 0.14)
-    .fromTo("#h-line2", {y:26,opacity:0}, {y:0,opacity:1,duration:.75}, 0.26)
-    .fromTo("#h-lede", {y:14,opacity:0}, {y:0,opacity:1,duration:.55}, 0.44)
-    .fromTo("#h-cta-wrap", {y:14,opacity:0}, {y:0,opacity:1,duration:.55}, 0.54)
-    .fromTo("#h-byline", {y:10,opacity:0}, {y:0,opacity:1,duration:.55}, 0.64);
-});
+    <!-- CTA FINAL -->
+    <section
+      class="relative z-10 overflow-hidden border-t border-white/[0.06] bg-[#080f1c] pt-24 pb-20 md:pt-28 md:pb-24"
+    >
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[260px] bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.1),transparent_65%)] blur-2xl"
+        ></div>
+      </div>
+      <div class="relative max-w-[680px] mx-auto px-6 text-center">
+        <p
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 text-[clamp(26px,3.5vw,32px)] font-semibold tracking-[-0.02em] leading-[1.28] text-[#eef2f9] text-balance mb-10 max-w-[520px] mx-auto"
+        >
+          <span class="text-[#f87171]">Decisão de IA malfeita custa caro.</span
+          ><br />
+          O diagnóstico custa o tempo de uma call online.
+        </p>
+        <div
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-12 flex flex-col gap-2 justify-center"
+        >
+          <div>
+            <a
+              href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio."
+              target="_blank"
+              rel="noopener"
+              class="group relative inline-flex items-center gap-2.5 h-12 px-7 rounded-lg font-medium tracking-[-0.012em] text-[15px] text-[#03111f] bg-[#0ea5e9] border border-[#0ea5e9]/70 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_4px_20px_-4px_rgba(14,165,233,0.45),0_0_40px_-8px_rgba(14,165,233,0.25)] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#38bdf8] hover:border-[#38bdf8] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35),0_6px_28px_-4px_rgba(56,189,248,0.5),0_0_50px_-6px_rgba(56,189,248,0.3)] active:translate-y-px"
+            >
+              Agendar meu diagnóstico
+              <span
+                aria-hidden="true"
+                class="transition-transform duration-200 group-hover:translate-x-0.5"
+                >→</span
+              >
+            </a>
+          </div>
 
-gsap.utils.toArray(".sec-reveal").forEach((el) => {
-  gsap.fromTo(el, { opacity:0, y:18 }, {
-    opacity:1, y:0, duration:.55, ease:"power2.out",
-    scrollTrigger: { trigger: el, start:"top 88%", once:true }
-  });
-});
-</script>
+          <div class="text-xs text-sky-500">Diagnóstico de IA Gratuito</div>
+        </div>
+        <p
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 border-t border-white/[0.06] pt-8 text-[15px] text-[#8b97ad] max-w-[400px] mx-auto leading-relaxed"
+        >
+          Diagnóstico é clareza para tomar decisão. A implementação de IA, você
+          decide depois.
+        </p>
+      </div>
+    </section>
 
-</body>
+    <!-- QUEM CONDUZ -->
+    <section class="relative z-10 border-t border-white/[0.06] py-22 md:py-28">
+      <div class="max-w-[680px] mx-auto px-6 text-center">
+        <div
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 mb-10 inline-flex items-center justify-center gap-2.5 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] font-medium tracking-[0.2em] uppercase text-[#0ea5e9]"
+        >
+          <span class="text-[#5a6780]">— 04</span> Quem conduz
+        </div>
+        <div
+          class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 flex flex-col items-center gap-6 max-w-[480px] mx-auto"
+        >
+          <div
+            class="relative size-[142px] rounded-2xl overflow-hidden shrink-0 border border-white/15 bg-[#0e172a] shadow-[0_0_0_1px_rgba(14,165,233,0.12),0_8px_24px_-6px_rgba(0,0,0,0.5)]"
+          >
+            <img
+              src="https://alexandreafonso.com.br/assets/alexandre.png"
+              alt="Alexandre Afonso"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10"
+            ></div>
+          </div>
+          <div>
+            <div
+              class="font-['Geist_Mono',ui-monospace,Menlo,monospace] mb-3 text-[11px] tracking-[0.08em] text-[#6b7894]"
+            >
+              ALEXANDRE AFONSO · CONSULTOR DE IA
+            </div>
+            <p class="text-[16px] text-[#a9b4c8] leading-[1.7]">
+              Trabalho com tecnologia há quase 20 anos e com marketing —
+              tráfego, social media, estratégia, copy — desde 2018. Desde o
+              lançamento do ChatGPT, uso essa combinação para implementar
+              agentes de IA que funcionam dentro do negócio. Em outras palavras, eu crio colaboradores digitais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL 2 -->
+    <section class="relative z-10 overflow-hidden bg-[#080f1c] py-20 md:py-24">
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[180px] bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.09),transparent_65%)] blur-2xl"
+        ></div>
+      </div>
+      <div
+        class="relative max-w-[680px] mx-auto px-6 flex flex-col gap-2 items-center justify-center"
+      >
+        <div>
+          <a
+            href="https://api.whatsapp.com/send?phone=553497227855&text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20diagn%C3%B3stico%20de%20IA%20do%20meu%20neg%C3%B3cio."
+            target="_blank"
+            rel="noopener"
+            class="sec-reveal reveal opacity-0 motion-reduce:opacity-100 group relative inline-flex items-center gap-2.5 h-12 px-7 rounded-lg font-medium tracking-[-0.012em] text-[15px] text-[#03111f] bg-[#0ea5e9] border border-[#0ea5e9]/70 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_4px_20px_-4px_rgba(14,165,233,0.45),0_0_40px_-8px_rgba(14,165,233,0.25)] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#38bdf8] hover:border-[#38bdf8] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35),0_6px_28px_-4px_rgba(56,189,248,0.5),0_0_50px_-6px_rgba(56,189,248,0.3)] active:translate-y-px"
+          >
+            Agendar meu diagnóstico
+            <span
+              aria-hidden="true"
+              class="transition-transform duration-200 group-hover:translate-x-0.5"
+              >→</span
+            >
+          </a>
+        </div>
+        <div class="text-xs text-sky-500">Diagnóstico de IA Gratuito</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-white/[0.05] py-9">
+      <div
+        class="max-w-[680px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-['Geist_Mono',ui-monospace,Menlo,monospace] text-[11px] tracking-[0.1em] uppercase text-[#5a6780]"
+      >
+        <span>Alexandre Afonso · ConsultorIA</span>
+        <span>Diagnóstico de IA</span>
+      </div>
+    </footer>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      document.fonts.ready.then(() => {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        tl.fromTo(
+          "#h-eyebrow",
+          { y: -8, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.55 },
+          0.04,
+        )
+          .fromTo(
+            "#h-line1",
+            { y: 26, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.75 },
+            0.14,
+          )
+          .fromTo(
+            "#h-line2",
+            { y: 26, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.75 },
+            0.26,
+          )
+          .fromTo(
+            "#h-lede",
+            { y: 14, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.55 },
+            0.44,
+          )
+          .fromTo(
+            "#h-cta-wrap",
+            { y: 14, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.55 },
+            0.54,
+          )
+          .fromTo(
+            "#h-byline",
+            { y: 10, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.55 },
+            0.64,
+          );
+      });
+
+      gsap.utils.toArray(".sec-reveal").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 18 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.55,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 88%", once: true },
+          },
+        );
+      });
+    </script>
+  </body>
 </html>
